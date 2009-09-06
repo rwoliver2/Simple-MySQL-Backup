@@ -1,0 +1,78 @@
+Simple MySQL Backup Version 1.10
+Copyright (C) 2009 OCS Solutions, Inc., All Rights Reserved.
+Licensed under the GNU General Public License, version 2.
+
+BACKGROUND
+
+This script is a simple script to automate MySQL backups.  Its
+main advantage is that you can backup multiple databases in individual
+files instead of as all one file as the mysqldump -A command does,
+without having to manually list each database in your backup script.
+
+Each backup is stored in the location you specify in the mysql-backup.yml
+file, stored in /etc.  This file also contains the root username and
+password for MySQL.
+
+INSTALLATION
+
+Before proceeding with installation, you must first create a .my.cnf file
+for the user that will be running this script (root recommended).  To do
+this, run (replace vim with nano if you aren't familiar with vim):
+
+vim ~/.my.cnf
+
+In it, you should have:
+
+[client]
+user = root
+password = mysqlrootpw
+
+Put in your MySQL root access credentials.  If you don't have a password
+for the MySQL root user, you can skip this.
+
+Make sure the file is secure from prying eyes by running:
+
+chmod 0600 ~/.my.cnf
+
+Now, copy the included mysql-backup.yml sample file to /etc/mysql-backup.yml
+and edit it to include the MySQL credentials as well.  You will also want
+to change the path of the MySQL backup location.
+
+Secure it afterwords by running:
+
+chmod 0600 /etc/mysql-backup.yml
+
+Once done, copy mysql-backup to /usr/local/bin and make it executable:
+
+cp mysql-backup /usr/local/bin
+chmod 0700 /usr/local/bin/mysql-backup
+
+Only root will be able to run this, but this is preferable.  Adjust permissions
+as necessary if you wish for another user to run it.
+
+To run it, just run:
+
+mysql-backup
+
+and it should proceed without error.
+
+If you get an error about a missing MySQL gem, then run:
+
+gem install mysql
+
+LICENSE
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
