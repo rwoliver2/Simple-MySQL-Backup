@@ -2,6 +2,8 @@ Simple MySQL Backup Version 1.10
 Copyright (C) 2009 OCS Solutions, Inc., All Rights Reserved.
 Licensed under the GNU General Public License, version 2.
 
+More info @ http://github.com/rwoliver2/Simple-MySQL-Backup/
+
 BACKGROUND
 
 This script is a simple script to automate MySQL backups.  Its
@@ -12,6 +14,12 @@ without having to manually list each database in your backup script.
 Each backup is stored in the location you specify in the mysql-backup.yml
 file, stored in /etc.  This file also contains the root username and
 password for MySQL.
+
+LIMITATIONS
+
+This script is not for backing up massively large databases, because
+mysqldump won't do that well.  If you have a database that is quite large
+or very, very busy, I would recommend other backup means.
 
 INSTALLATION
 
@@ -60,6 +68,12 @@ If you get an error about a missing MySQL gem, then run:
 
 gem install mysql
 
+SHAMELESS PLUG
+
+Simple MySQL Backup is used on some of our machines at OCS Solutions,
+where we do web hosting (including Ruby on Rails, PHP, and Python suppport),
+as well as consulting.  Check us out at http://www.ocssolutions.com/ today!
+ 
 LICENSE
 
 This program is free software; you can redistribute it and/or modify
