@@ -46,7 +46,7 @@ puts
 while row = result.fetch_row do
   print "Backing up database [#{row}]"
   location_db = "#{backup_location}/#{row}.sql"
-  `mysqldump -e -u #{mysql_username} #{row} > #{location_db}`
+  `mysqldump -e --delayed-insert -u #{mysql_username} #{row} > #{location_db}`
   print ", now compressing dump file #{row}.sql"
   `rm -f #{location_db}.gz`
   `gzip #{location_db}`
