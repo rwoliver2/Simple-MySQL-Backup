@@ -4,7 +4,7 @@ require "rubygems"
 require "yaml"
 require "mysql"
 
-puts "Simple MySQL Backup Script Version 1.10"
+puts "Simple MySQL Backup Script Version 1.11"
 puts "Copyright (C) 2009 OCS Solutions, Inc. - All Rights Reserved"
 puts "This software is licensed under the GPL version 2."
 puts
