@@ -2,7 +2,8 @@ Simple MySQL Backup Version 1.11
 Copyright (C) 2009 OCS Solutions, Inc., All Rights Reserved.
 Licensed under the GNU General Public License, version 2.
 
-More info @ http://github.com/rwoliver2/Simple-MySQL-Backup/
+NOTE: THIS IS VERY OLD SOFTWARE AND NOT MAINTAINED ANY LONGER!
+While it does work, even with some modern MySQL versions, I would not use it in production. Hopefully, someday, when I have more time, I'll update this, but for now, please know this is EOL.
 
 BACKGROUND
 
